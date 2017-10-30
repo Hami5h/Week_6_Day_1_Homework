@@ -35,4 +35,20 @@ public void canBoardPassenger() {
   assertEquals(1, bus.passengerCount());
 }
 
+@Test
+public void cannotBoardPassengersWhenBusIsFull() {
+  for(int i = 0; i < 30; i++) {
+    bus.board(person);
+  }
+  assertEquals(26, bus.passengerCount());
+}
+
+@Test
+public void busIsFull() {
+  for(int i = 0; i < 26; i++){
+    bus.board(person);
+  }
+  assertEquals(true, bus.isBusFull());
+}
+
 }

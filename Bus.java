@@ -31,8 +31,7 @@ class Bus {
     if(isBusFull()) {
       return;
     }
-    int passengerCount = passengerCount();
-    passengers[passengerCount] = person;
+    passengers[passengerCount()] = person;
   }
 
   public boolean isBusFull() {
