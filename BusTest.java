@@ -24,4 +24,15 @@ public void hasCapacity() {
   assertEquals(26, capacity);
 }
 
+@Test
+public void busStartsEmpty() {
+  assertEquals(0, bus.passengerCount());
+}
+
+@Test
+public void canBoardPassenger() {
+  bus.board(person);
+  assertEquals(1, bus.passengerCount());
+}
+
 }

@@ -16,4 +16,26 @@ class Bus {
   public int getCapacity() {
     return this.capacity;
   }
+
+  public int passengerCount() {
+    int count = 0;
+    for(Person person : passengers) {
+      if(person != null) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  public void board(Person person) {
+    if(isBusFull()) {
+      return;
+    }
+    int passengerCount = passengerCount();
+    passengers[passengerCount] = person;
+  }
+
+  public boolean isBusFull() {
+    return passengerCount() == passengers.length;
+  }
 }
